@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -20,7 +18,6 @@ public class src_CharacterController : MonoBehaviour
         listOfPositions = new List<Vector3>();
         src_FireController = new src_FireController();
 
-
         for (int i = 0; i < src_FireController.listOfFires.Length; i++) {
             listOfPositions.Add(src_FireController.listOfFires[i].transform.position);
         }
@@ -40,7 +37,7 @@ public class src_CharacterController : MonoBehaviour
     {
         character.GetComponent<NavMeshAgent>().SetDestination(targetPosition);
 
-        if (Vector3.Distance(transform.position, targetPosition) < .5f) { ChangeTarget(); }
+        if (Vector3.Distance(transform.position, targetPosition) < 1f) { ChangeTarget(); }
     }
 
     private void ChangeTarget()
@@ -50,11 +47,9 @@ public class src_CharacterController : MonoBehaviour
         int nextTargetIndex = targetIndex;
         while (nextTargetIndex == targetIndex) {
            nextTargetIndex = UnityEngine.Random.Range(0, listOfPositions.Count);
-            Debug.Log("Le next target " + nextTargetIndex);
         }
+
         targetIndex = nextTargetIndex;
-
-
         targetPosition = listOfPositions[targetIndex];
         src_FireController.setVisibilityOn(targetIndex);
     }
