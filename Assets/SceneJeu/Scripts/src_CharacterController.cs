@@ -50,7 +50,7 @@ public class src_CharacterController : MonoBehaviour
         int nextTargetIndex = targetIndex;
         while (nextTargetIndex == targetIndex) {
            nextTargetIndex = UnityEngine.Random.Range(0, listOfPositions.Count);
-            Debug.Log(nextTargetIndex);
+            Debug.Log("Le next target " + nextTargetIndex);
         }
         targetIndex = nextTargetIndex;
 
