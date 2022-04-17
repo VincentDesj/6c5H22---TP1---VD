@@ -6,6 +6,7 @@ TagManager:
   tags:
   - btnPlayPause
   - character
+  - crouch obstacle
   layers:
   - Default
   - TransparentFX

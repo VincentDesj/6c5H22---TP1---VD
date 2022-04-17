@@ -8,9 +8,7 @@ public class src_FireController : MonoBehaviour
 
     void Awake()
     {
-
         listOfFires = this.GetComponentsInChildren<ParticleSystem>(true);
-        Debug.Log(listOfFires.Length);
     }
 
     public void setVisibilityOn(int target)
